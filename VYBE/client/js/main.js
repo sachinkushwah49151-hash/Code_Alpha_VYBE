@@ -8,9 +8,6 @@ const VYBE_LANG_KEY = 'vybe_lang';
 
 function resolveEffectiveTheme(mode) {
   if (mode === 'dark' || mode === 'light') return mode;
-  if (typeof window !== 'undefined' && window.matchMedia) {
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-  }
   return 'light';
 }
 
@@ -19,7 +16,7 @@ function getThemeMode() {
     const saved = localStorage.getItem(VYBE_THEME_KEY);
     if (saved === 'light' || saved === 'dark' || saved === 'system') return saved;
   } catch (e) {}
-  return 'system';
+  return 'light';
 }
 
 function applyThemeToDOM(mode = getThemeMode()) {

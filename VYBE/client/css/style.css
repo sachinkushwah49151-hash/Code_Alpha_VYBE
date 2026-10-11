@@ -9,49 +9,50 @@
 :root {
   /* Surfaces & Backgrounds */
   --bg-primary: #ffffff;
-  --bg-secondary: #f6f7f9;
+  --bg-secondary: #f8fafc;
   --bg-elevated: #ffffff;
-  --bg-canvas: #f8f9fb;
-  --bg-subtle: #f1f3f6;
-  --bg-hover: #eaecef;
-  --bg-active: #e2e5ea;
-  --bg-header-blur: rgba(255, 255, 255, 0.92);
-  --bg-post-hover: #fafbfc;
+  --bg-canvas: #f8fafc;
+  --bg-subtle: #f1f5f9;
+  --bg-hover: #e2e8f0;
+  --bg-active: #cbd5e1;
+  --bg-header-blur: rgba(255, 255, 255, 0.95);
+  --bg-post-hover: #f8fafc;
   
   /* Borders & Dividers */
-  --border-hairline: #eceef2;
-  --border-subtle: #dfe3ea;
-  --border-strong: #c9d0db;
+  --border-hairline: #e2e8f0;
+  --border-subtle: #cbd5e1;
+  --border-strong: #94a3b8;
   
   /* Typography Colors */
-  --text-primary: #0f1419;
-  --text-secondary: #4b5563;
-  --text-tertiary: #6b7280;
-  --text-muted: #6b7280;
-  --text-placeholder: #9ca3af;
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-tertiary: #64748b;
+  --text-muted: #64748b;
+  --text-placeholder: #94a3b8;
   --text-inverse: #ffffff;
   
-  /* Brand Accent: Distinctive VYBE Indigo/Violet */
-  --accent: #5846E0;
-  --accent-hover: #4835d0;
-  --accent-light: rgba(88, 70, 224, 0.09);
-  --accent-surface: rgba(88, 70, 224, 0.04);
+  /* Brand Accent: Restrained Purple */
+  --accent: #6d28d9;
+  --accent-hover: #5b21b6;
+  --accent-light: rgba(109, 40, 217, 0.08);
+  --accent-surface: rgba(109, 40, 217, 0.04);
   
   /* Engagement / Semantic */
-  --like-pink: #f91880;
-  --like-pink-bg: rgba(249, 24, 128, 0.08);
-  --repost-green: #00ba7c;
-  --repost-green-bg: rgba(0, 186, 124, 0.08);
-  --comment-blue: #1d9bf0;
-  --comment-blue-bg: rgba(29, 155, 240, 0.08);
+  --like-pink: #e11d48;
+  --like-pink-bg: rgba(225, 29, 72, 0.08);
+  --repost-green: #059669;
+  --repost-green-bg: rgba(5, 150, 105, 0.08);
+  --comment-blue: #0284c7;
+  --comment-blue-bg: rgba(2, 132, 199, 0.08);
   --danger: #dc2626;
   --danger-bg: rgba(220, 38, 38, 0.08);
   
   /* Shadows (subtle & soft, never harsh) */
-  --shadow-sm: 0 1px 2px rgba(15, 20, 25, 0.04);
-  --shadow-md: 0 4px 12px rgba(15, 20, 25, 0.06);
-  --shadow-lg: 0 12px 32px rgba(15, 20, 25, 0.08);
-  --shadow-modal: 0 24px 64px rgba(15, 20, 25, 0.18);
+  --shadow-xs: 0 1px 2px rgba(15, 23, 42, 0.05);
+  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 4px 16px rgba(15, 23, 42, 0.07);
+  --shadow-lg: 0 12px 32px rgba(15, 23, 42, 0.09);
+  --shadow-modal: 0 24px 64px rgba(15, 23, 42, 0.14);
   
   /* Dimensions */
   --sidebar-width: 248px;
@@ -77,51 +78,52 @@
 
 :root[data-theme="dark"] {
   /* Surfaces & Backgrounds */
-  --bg-primary: #0d1118;
-  --bg-secondary: #131924;
-  --bg-elevated: #141a26;
-  --bg-canvas: #090c12;
-  --bg-subtle: #182030;
-  --bg-hover: #1e283b;
-  --bg-active: #263248;
-  --bg-header-blur: rgba(13, 17, 24, 0.9);
-  --bg-post-hover: #10151f;
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-elevated: #ffffff;
+  --bg-canvas: #f8fafc;
+  --bg-subtle: #f1f5f9;
+  --bg-hover: #e2e8f0;
+  --bg-active: #cbd5e1;
+  --bg-header-blur: rgba(255, 255, 255, 0.95);
+  --bg-post-hover: #f8fafc;
   
   /* Borders & Dividers */
-  --border-hairline: #1e2636;
-  --border-subtle: #283246;
-  --border-strong: #384661;
+  --border-hairline: #e2e8f0;
+  --border-subtle: #cbd5e1;
+  --border-strong: #94a3b8;
   
   /* Typography Colors */
-  --text-primary: #f1f5f9;
-  --text-secondary: #94a3b8;
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
   --text-tertiary: #64748b;
   --text-muted: #64748b;
-  --text-placeholder: #475569;
-  --text-inverse: #0d1118;
+  --text-placeholder: #94a3b8;
+  --text-inverse: #ffffff;
   
-  /* Brand Accent: Distinctive VYBE Indigo/Violet */
-  --accent: #7c6df2;
-  --accent-hover: #8f82f7;
-  --accent-light: rgba(124, 109, 242, 0.16);
-  --accent-surface: rgba(124, 109, 242, 0.08);
+  /* Brand Accent: Restrained Purple */
+  --accent: #6d28d9;
+  --accent-hover: #5b21b6;
+  --accent-light: rgba(109, 40, 217, 0.08);
+  --accent-surface: rgba(109, 40, 217, 0.04);
   
   /* Engagement / Semantic */
-  --like-pink: #fb2c86;
-  --like-pink-bg: rgba(251, 44, 134, 0.14);
-  --repost-green: #00d08a;
-  --repost-green-bg: rgba(0, 208, 138, 0.14);
-  --comment-blue: #38bdf8;
-  --comment-blue-bg: rgba(56, 189, 248, 0.14);
-  --danger: #f87171;
-  --danger-bg: rgba(248, 113, 113, 0.12);
+  --like-pink: #e11d48;
+  --like-pink-bg: rgba(225, 29, 72, 0.08);
+  --repost-green: #059669;
+  --repost-green-bg: rgba(5, 150, 105, 0.08);
+  --comment-blue: #0284c7;
+  --comment-blue-bg: rgba(2, 132, 199, 0.08);
+  --danger: #dc2626;
+  --danger-bg: rgba(220, 38, 38, 0.08);
   
   /* Shadows */
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35);
-  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.45);
-  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.6);
-  --shadow-modal: 0 24px 64px rgba(0, 0, 0, 0.78);
-  color-scheme: dark;
+  --shadow-xs: 0 1px 2px rgba(15, 23, 42, 0.05);
+  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 4px 16px rgba(15, 23, 42, 0.07);
+  --shadow-lg: 0 12px 32px rgba(15, 23, 42, 0.09);
+  --shadow-modal: 0 24px 64px rgba(15, 23, 42, 0.14);
+  color-scheme: light;
 }
 
 /* --- Resets & Foundations --- */
@@ -662,13 +664,13 @@ textarea, input {
   padding: 24px 16px;
   position: relative;
   overflow-x: hidden;
-  background-color: #070910;
+  background-color: #f8fafc;
   background-image:
-    radial-gradient(circle at 50% 0%, rgba(92, 74, 232, 0.22) 0%, transparent 52%),
-    radial-gradient(circle at 80% 24%, rgba(67, 97, 238, 0.14) 0%, transparent 45%),
-    radial-gradient(circle at 18% 78%, rgba(88, 70, 224, 0.12) 0%, transparent 48%),
-    linear-gradient(180deg, #090c15 0%, #06080e 100%);
-  color: #f8fafc;
+    radial-gradient(circle at 50% 0%, rgba(109, 40, 217, 0.08) 0%, transparent 52%),
+    radial-gradient(circle at 80% 24%, rgba(59, 130, 246, 0.06) 0%, transparent 45%),
+    radial-gradient(circle at 18% 78%, rgba(109, 40, 217, 0.04) 0%, transparent 48%),
+    linear-gradient(180deg, #ffffff 0%, #f1f5f9 100%);
+  color: #0f172a;
 }
 
 /* Understated Creative-Community Network Background */
@@ -684,7 +686,7 @@ textarea, input {
   width: 100%;
   height: 100%;
   display: block;
-  opacity: 0.85;
+  opacity: 0.9;
 }
 
 /* Subtle Ambient Side Community Pillar Labels (Desktop) */
@@ -699,7 +701,7 @@ textarea, input {
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: rgba(203, 213, 225, 0.24);
+  color: rgba(100, 116, 139, 0.35);
   pointer-events: none;
   user-select: none;
   z-index: 0;
@@ -709,7 +711,7 @@ textarea, input {
   content: '';
   width: 28px;
   height: 2px;
-  background: rgba(124, 109, 242, 0.55);
+  background: rgba(109, 40, 217, 0.45);
   margin-top: 4px;
   border-radius: 2px;
 }
@@ -725,14 +727,14 @@ textarea, input {
   font-weight: 700;
   line-height: 1.28;
   letter-spacing: -0.02em;
-  color: rgba(241, 245, 249, 0.18);
+  color: rgba(15, 23, 42, 0.16);
   pointer-events: none;
   user-select: none;
   z-index: 0;
 }
 
 .auth-ambient-quote span {
-  color: rgba(139, 122, 255, 0.36);
+  color: rgba(109, 40, 217, 0.35);
 }
 
 /* Centered Wrapper */
@@ -750,33 +752,19 @@ textarea, input {
 /* Translucent Glassmorphism Card */
 .auth-glass-card {
   width: 100%;
-  background: linear-gradient(165deg, rgba(23, 27, 42, 0.82) 0%, rgba(13, 16, 26, 0.9) 100%);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.09);
+  border: 1px solid #e2e8f0;
   box-shadow:
-    0 24px 60px rgba(0, 0, 0, 0.68),
-    0 0 42px -12px rgba(98, 80, 238, 0.25),
-    inset 0 1px 0 rgba(255, 255, 255, 0.14);
+    0 20px 48px -10px rgba(15, 23, 42, 0.08),
+    0 1px 3px rgba(15, 23, 42, 0.04);
   padding: 30px 30px 24px;
   display: flex;
   flex-direction: column;
   gap: 18px;
   position: relative;
-}
-
-.auth-glass-card::before {
-  content: '';
-  position: absolute;
-  inset: -1px;
-  border-radius: 20px;
-  padding: 1px;
-  background: linear-gradient(135deg, rgba(139, 122, 255, 0.36) 0%, rgba(255, 255, 255, 0.04) 45%, rgba(99, 102, 241, 0.24) 100%);
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
 }
 
 /* Card Brand & Heading Hierarchy */
@@ -800,38 +788,38 @@ textarea, input {
   width: 34px;
   height: 34px;
   border-radius: 9px;
-  background: #ffffff;
-  color: #0b0e17;
+  background: #0f172a;
+  color: #ffffff;
   font-size: 1.15rem;
   font-weight: 800;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 14px rgba(255, 255, 255, 0.14);
+  box-shadow: 0 3px 10px rgba(15, 23, 42, 0.12);
 }
 
 .auth-brand-wordmark {
   font-size: 1.5rem;
   font-weight: 800;
   letter-spacing: -0.04em;
-  color: #ffffff;
+  color: #0f172a;
 }
 
 .auth-brand-wordmark .dot {
-  color: #7c6df2;
+  color: #6d28d9;
 }
 
 .auth-card-title {
   font-size: 1.65rem;
   font-weight: 700;
   letter-spacing: -0.025em;
-  color: #ffffff;
+  color: #0f172a;
   line-height: 1.2;
 }
 
 .auth-card-tagline {
   font-size: 0.9rem;
-  color: rgba(203, 213, 225, 0.72);
+  color: #475569;
   font-weight: 400;
 }
 
@@ -842,18 +830,18 @@ textarea, input {
   gap: 9px;
   padding: 10px 13px;
   border-radius: 10px;
-  background: rgba(244, 63, 94, 0.12);
-  border: 1px solid rgba(244, 63, 94, 0.35);
-  color: #fda4af;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #b91c1c;
   font-size: 0.83rem;
   font-weight: 500;
   line-height: 1.4;
 }
 
 .auth-alert.info {
-  background: rgba(99, 102, 241, 0.14);
-  border-color: rgba(129, 140, 248, 0.36);
-  color: #c7d2fe;
+  background: #eff6ff;
+  border-color: #bfdbfe;
+  color: #1d4ed8;
 }
 
 .auth-alert.visible {
@@ -882,7 +870,7 @@ textarea, input {
 .glass-input-icon {
   position: absolute;
   left: 14px;
-  color: rgba(148, 163, 184, 0.75);
+  color: #64748b;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -895,45 +883,45 @@ textarea, input {
   height: 44px;
   padding: 0 14px 0 42px;
   border-radius: 11px;
-  border: 1px solid rgba(255, 255, 255, 0.11);
-  background: rgba(15, 19, 30, 0.72);
-  color: #f8fafc;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  color: #0f172a;
   font-size: 0.92rem;
   transition: border-color var(--transition-fast), background var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 .glass-input::placeholder {
-  color: rgba(148, 163, 184, 0.62);
+  color: #94a3b8;
 }
 
 .glass-input:hover {
-  border-color: rgba(255, 255, 255, 0.2);
-  background: rgba(18, 23, 36, 0.84);
+  border-color: #94a3b8;
+  background: #ffffff;
 }
 
 .glass-input:focus {
-  border-color: #7c6df2;
-  background: rgba(18, 23, 38, 0.95);
-  box-shadow: 0 0 0 3px rgba(124, 109, 242, 0.22);
+  border-color: #6d28d9;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(109, 40, 217, 0.14);
 }
 
 .glass-input-wrap:focus-within .glass-input-icon {
-  color: #a599ff;
+  color: #6d28d9;
 }
 
 .glass-input.input-error {
-  border-color: #f43f5e;
-  background: rgba(45, 16, 28, 0.55);
+  border-color: #ef4444;
+  background: #fff5f5;
 }
 
 .glass-input.input-error:focus {
-  box-shadow: 0 0 0 3px rgba(244, 63, 94, 0.2);
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.18);
 }
 
 .glass-toggle-btn {
   position: absolute;
   right: 10px;
-  color: rgba(148, 163, 184, 0.78);
+  color: #64748b;
   padding: 6px;
   border-radius: 7px;
   display: inline-flex;
@@ -943,18 +931,18 @@ textarea, input {
 }
 
 .glass-toggle-btn:hover {
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.07);
+  color: #0f172a;
+  background: #f1f5f9;
 }
 
 .glass-toggle-btn:focus-visible {
-  outline: 2px solid #7c6df2;
+  outline: 2px solid #6d28d9;
   outline-offset: 1px;
 }
 
 .field-error-msg {
   font-size: 0.78rem;
-  color: #fb7185;
+  color: #dc2626;
   font-weight: 500;
   padding-left: 2px;
   display: none;
@@ -973,7 +961,7 @@ textarea, input {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  color: rgba(226, 232, 240, 0.85);
+  color: #334155;
   cursor: pointer;
   user-select: none;
 }
@@ -984,8 +972,8 @@ textarea, input {
   width: 17px;
   height: 17px;
   border-radius: 5px;
-  border: 1px solid rgba(255, 255, 255, 0.24);
-  background: rgba(15, 19, 30, 0.8);
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
   display: inline-grid;
   place-content: center;
   cursor: pointer;
@@ -1003,8 +991,8 @@ textarea, input {
 }
 
 .auth-remember-checkbox:checked {
-  background: #6c5ce7;
-  border-color: #7c6df2;
+  background: #6d28d9;
+  border-color: #6d28d9;
 }
 
 .auth-remember-checkbox:checked::before {
@@ -1012,17 +1000,17 @@ textarea, input {
 }
 
 .auth-remember-checkbox:focus-visible {
-  outline: 2px solid #7c6df2;
+  outline: 2px solid #6d28d9;
   outline-offset: 2px;
 }
 
-/* Primary Gradient Sign-In Button */
+/* Primary Sign-In Button */
 .btn-glass-primary {
   width: 100%;
   height: 44px;
   padding: 0 20px;
   border-radius: 11px;
-  background: linear-gradient(90deg, #6355e8 0%, #7364f0 50%, #5e72eb 100%);
+  background: #6d28d9;
   color: #ffffff;
   font-weight: 600;
   font-size: 0.94rem;
@@ -1030,14 +1018,14 @@ textarea, input {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  box-shadow: 0 6px 20px rgba(99, 85, 232, 0.36), inset 0 1px 0 rgba(255, 255, 255, 0.22);
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast), filter var(--transition-fast), opacity var(--transition-fast);
+  box-shadow: 0 4px 14px rgba(109, 40, 217, 0.28);
+  transition: background var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast), opacity var(--transition-fast);
   margin-top: 2px;
 }
 
 .btn-glass-primary:hover:not(:disabled) {
-  filter: brightness(1.08);
-  box-shadow: 0 8px 26px rgba(108, 92, 231, 0.48), inset 0 1px 0 rgba(255, 255, 255, 0.28);
+  background: #5b21b6;
+  box-shadow: 0 6px 20px rgba(109, 40, 217, 0.36);
 }
 
 .btn-glass-primary:active:not(:disabled) {
@@ -1045,7 +1033,7 @@ textarea, input {
 }
 
 .btn-glass-primary:focus-visible {
-  outline: 2px solid #a599ff;
+  outline: 2px solid #6d28d9;
   outline-offset: 2px;
 }
 
@@ -1059,7 +1047,7 @@ textarea, input {
   display: flex;
   align-items: center;
   gap: 12px;
-  color: rgba(148, 163, 184, 0.56);
+  color: #64748b;
   font-size: 0.68rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -1072,7 +1060,7 @@ textarea, input {
   content: '';
   flex: 1;
   height: 1px;
-  background: rgba(255, 255, 255, 0.09);
+  background: #e2e8f0;
 }
 
 /* OAuth Buttons Grid */
@@ -1087,26 +1075,26 @@ textarea, input {
   height: 41px;
   padding: 0 14px;
   border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(17, 21, 34, 0.68);
-  color: rgba(241, 245, 249, 0.92);
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  color: #1e293b;
   font-size: 0.86rem;
   font-weight: 500;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  transition: background var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
+  transition: background var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 .btn-glass-secondary:hover:not(:disabled) {
-  background: rgba(28, 34, 52, 0.85);
-  border-color: rgba(255, 255, 255, 0.24);
-  color: #ffffff;
+  background: #f8fafc;
+  border-color: #94a3b8;
+  color: #0f172a;
 }
 
 .btn-glass-secondary:focus-visible {
-  outline: 2px solid #7c6df2;
+  outline: 2px solid #6d28d9;
   outline-offset: 2px;
 }
 
@@ -1119,19 +1107,19 @@ textarea, input {
 .auth-glass-footer {
   text-align: center;
   font-size: 0.85rem;
-  color: rgba(148, 163, 184, 0.82);
+  color: #475569;
   padding-top: 4px;
 }
 
 .auth-glass-footer a {
-  color: #8b7aff;
+  color: #6d28d9;
   font-weight: 600;
   margin-left: 4px;
   transition: color var(--transition-fast);
 }
 
 .auth-glass-footer a:hover {
-  color: #b1a5ff;
+  color: #5b21b6;
   text-decoration: underline;
 }
 
@@ -1141,7 +1129,7 @@ textarea, input {
   align-items: center;
   gap: 6px;
   font-size: 0.78rem;
-  color: rgba(148, 163, 184, 0.64);
+  color: #64748b;
 }
 
 /* Shared Light-Mode Form Controls (Used in Profile & Create-Post Modals) */
@@ -1425,7 +1413,7 @@ textarea, input {
   left: 20%;
   right: 20%;
   height: 3px;
-  background: var(--text-primary);
+  background: var(--accent);
   border-radius: 3px 3px 0 0;
 }
 
@@ -1618,7 +1606,7 @@ textarea, input {
   overflow: hidden;
   border: 1px solid var(--border-hairline);
   max-height: 480px;
-  background: #000;
+  background: var(--bg-subtle);
 }
 
 .post-single-media img {
@@ -1986,7 +1974,7 @@ textarea, input {
   aspect-ratio: 1/1;
   overflow: hidden;
   cursor: pointer;
-  background: #000;
+  background: var(--bg-subtle);
 }
 
 .mosaic-tile img {
@@ -2569,68 +2557,7 @@ textarea, input {
   line-height: 1.45;
 }
 
-/* Auth Light Theme Overrides */
-:root[data-theme="light"] .auth-glass-viewport {
-  background-color: #f1f5f9;
-  background-image:
-    radial-gradient(circle at 50% 0%, rgba(92, 74, 232, 0.14) 0%, transparent 52%),
-    radial-gradient(circle at 80% 24%, rgba(67, 97, 238, 0.1) 0%, transparent 45%),
-    linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%);
-  color: #0f1419;
-}
 
-:root[data-theme="light"] .auth-glass-card {
-  background: rgba(255, 255, 255, 0.92);
-  border-color: rgba(15, 23, 42, 0.1);
-  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.12), 0 0 0 1px rgba(88, 70, 224, 0.08);
-}
-
-:root[data-theme="light"] .auth-brand-wordmark,
-:root[data-theme="light"] .auth-card-title {
-  color: #0f1419;
-}
-
-:root[data-theme="light"] .auth-brand-badge {
-  background: #0f1419;
-  color: #ffffff;
-}
-
-:root[data-theme="light"] .auth-card-tagline,
-:root[data-theme="light"] .auth-remember-label,
-:root[data-theme="light"] .auth-glass-footer,
-:root[data-theme="light"] .auth-demo-caption {
-  color: #475569;
-}
-
-:root[data-theme="light"] .glass-input {
-  background: #ffffff;
-  border-color: #cbd5e1;
-  color: #0f1419;
-}
-
-:root[data-theme="light"] .glass-input::placeholder {
-  color: #94a3b8;
-}
-
-:root[data-theme="light"] .btn-glass-secondary {
-  background: #f8fafc;
-  border-color: #cbd5e1;
-  color: #1e293b;
-}
-
-:root[data-theme="light"] .btn-glass-secondary:hover:not(:disabled) {
-  background: #f1f5f9;
-  border-color: #94a3b8;
-  color: #0f1419;
-}
-
-:root[data-theme="light"] .auth-ambient-quote {
-  color: rgba(15, 23, 42, 0.22);
-}
-
-:root[data-theme="light"] .auth-ambient-pillars {
-  color: rgba(15, 23, 42, 0.35);
-}
 
 /* ==========================================================================
    FOCUSED SETTINGS PAGE & COMPACT SEGMENTED CONTROLS
