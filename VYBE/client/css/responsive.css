@@ -1,0 +1,277 @@
+/* ==========================================================================
+   VYBE — Responsive Layout Breakpoints v3.0
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   TABLET EXPERIENCE (768px to 1199px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1199px) {
+  /* Hide Right Discovery Aside */
+  .app-sidebar-right {
+    display: none !important;
+  }
+
+  /* Left Sidebar Collapses into Icon-Only Navigation */
+  .app-sidebar-left {
+    width: 76px;
+    padding: 20px 10px;
+    align-items: center;
+  }
+
+  .sidebar-brand-link .vybe-brand span:not(.brand-glyph) {
+    display: none;
+  }
+
+  .nav-link-item {
+    justify-content: center;
+    padding: 12px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+  }
+
+  .nav-link-item span {
+    display: none;
+  }
+
+  .nav-badge-count {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    padding: 1px 5px;
+    font-size: 0.68rem;
+  }
+
+  .btn-sidebar-create {
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border-radius: 50%;
+  }
+  .btn-sidebar-create span {
+    display: none;
+  }
+
+  .sidebar-user-menu {
+    padding: 0;
+    justify-content: center;
+  }
+  .user-menu-info, .btn-logout {
+    display: none;
+  }
+
+  /* Center Feed */
+  .app-center-feed {
+    max-width: 640px;
+  }
+
+  /* Landing Hero on Tablet */
+  .landing-hero {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding-top: 40px;
+  }
+
+  .hero-content {
+    align-items: center;
+    text-align: center;
+  }
+  .hero-subtitle {
+    margin: 0 auto;
+  }
+  .hero-cta-group {
+    justify-content: center;
+  }
+  .hero-social-proof {
+    justify-content: center;
+  }
+
+  /* Pillars Grid */
+  .pillars-grid, .preview-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  /* Hide side ambient text on smaller screens so card stays uncluttered */
+  .auth-ambient-pillars,
+  .auth-ambient-quote {
+    display: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   MOBILE EXPERIENCE (< 768px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 767px) {
+  /* Show Mobile Header & Bottom Navigation Bar */
+  .mobile-top-header {
+    display: flex;
+  }
+  .mobile-bottom-bar {
+    display: flex;
+  }
+
+  /* Hide Desktop Sidebars */
+  .app-sidebar-left {
+    display: none !important;
+  }
+  .app-sidebar-right {
+    display: none !important;
+  }
+
+  /* App Shell & Main Feed Full-Bleed */
+  .app-shell {
+    flex-direction: column;
+  }
+
+  .app-center-feed {
+    max-width: 100%;
+    border-right: none;
+    padding-bottom: var(--bottom-bar-height);
+  }
+
+  /* Feed Items Tightened */
+  .post-item {
+    padding: 14px 14px;
+    gap: 10px;
+  }
+  .post-text-body {
+    font-size: 0.98rem;
+  }
+
+  /* Inline Composer */
+  .feed-composer {
+    padding: 14px;
+    gap: 10px;
+  }
+
+  /* Centered Glass Card Mobile Layout */
+  .auth-glass-viewport {
+    padding: 18px 14px;
+  }
+  .auth-center-stage {
+    max-width: 100%;
+  }
+  .auth-glass-card {
+    padding: 24px 20px 20px;
+    border-radius: 16px;
+    gap: 16px;
+  }
+  .auth-card-title {
+    font-size: 1.48rem;
+  }
+  .auth-oauth-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  /* Landing Page Mobile */
+  .landing-nav {
+    padding: 12px 16px;
+  }
+  .landing-hero {
+    padding: 32px 16px 48px;
+    gap: 32px;
+  }
+  .hero-title {
+    font-size: 2.3rem;
+  }
+  .hero-subtitle {
+    font-size: 1.02rem;
+  }
+  .hero-cta-group {
+    flex-direction: column;
+    width: 100%;
+  }
+  .hero-cta-group .btn {
+    width: 100%;
+  }
+  .showcase-stage {
+    max-width: 100%;
+  }
+  .landing-pillars {
+    padding: 56px 16px;
+  }
+  .section-heading {
+    font-size: 1.8rem;
+    margin-bottom: 36px;
+  }
+  .landing-preview-section {
+    padding: 56px 16px;
+  }
+  .landing-cta-banner {
+    padding: 64px 16px;
+  }
+  .cta-banner-title {
+    font-size: 1.85rem;
+  }
+  .landing-footer {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+
+  /* Messages Mobile: Stack list and chat */
+  .messages-container {
+    flex-direction: column;
+    height: calc(100vh - var(--bottom-bar-height));
+  }
+  .messages-thread-list {
+    width: 100%;
+    max-height: 220px;
+    border-right: none;
+    border-bottom: 1px solid var(--border-hairline);
+  }
+  .messages-chat-view {
+    flex: 1;
+  }
+
+  /* Profile Header */
+  .profile-header-card {
+    padding: 20px 16px;
+  }
+  .profile-display-name {
+    font-size: 1.35rem;
+  }
+  .profile-stats-bar {
+    gap: 16px;
+  }
+
+  /* Modal on Mobile */
+  .modal-dialog-card {
+    margin: 12px;
+    max-height: 90vh;
+  }
+
+  /* Toast Position above Mobile Bottom Bar */
+  .vybe-toast-hub {
+    bottom: calc(var(--bottom-bar-height) + 16px);
+  }
+
+  /* Settings Responsive Stack on Mobile */
+  .settings-content-stack {
+    padding: 16px 14px 48px;
+  }
+  .settings-panel {
+    padding: 16px;
+  }
+  .settings-panel-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .segmented-control {
+    width: 100%;
+  }
+  .segmented-option {
+    flex: 1;
+    padding: 8px 10px;
+  }
+  .settings-field-row {
+    grid-template-columns: 1fr;
+  }
+  .settings-form-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

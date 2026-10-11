@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings / VYBE</title>
+  <meta name="description" content="Manage your VYBE appearance, language, account details, and security.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Mobile Top Header -->
+  <header class="mobile-top-header">
+    <a href="feed.html" class="vybe-brand">
+      <span class="brand-glyph">V</span>
+      <span>VYBE<span class="brand-tag">.</span></span>
+    </a>
+    <a href="feed.html" class="btn-ghost btn-sm" aria-label="Back to Feed">←</a>
+  </header>
+
+  <div class="app-shell app-shell--focused">
+
+    <!-- 1. LEFT NAVIGATION -->
+    <aside class="app-sidebar-left">
+      <div class="sidebar-top">
+        <a href="feed.html" class="sidebar-brand-link vybe-brand">
+          <span class="brand-glyph">V</span>
+          <span>VYBE<span class="brand-tag">.</span></span>
+        </a>
+        <nav id="appSidebarNav" aria-label="Main Navigation"></nav>
+      </div>
+      <div id="appSidebarUser"></div>
+    </aside>
+
+    <!-- 2. FOCUSED SETTINGS CONTENT (No Right Discovery Sidebar) -->
+    <main class="app-center-feed settings-page-main">
+
+      <!-- Compact Sticky Header -->
+      <div class="sticky-page-header settings-page-header">
+        <div>
+          <h1 class="page-header-title" data-i18n="settings.title">Settings</h1>
+          <p class="page-header-subtitle" data-i18n="settings.subtitle">Manage your appearance, language, account details, and security.</p>
+        </div>
+      </div>
+
+      <div class="settings-content-stack">
+
+        <!-- 1. APPEARANCE -->
+        <section class="settings-panel" aria-labelledby="headingAppearance">
+          <div class="settings-panel-row">
+            <div class="settings-panel-copy">
+              <h2 class="settings-panel-title" id="headingAppearance" data-i18n="settings.appearance">Appearance</h2>
+              <p class="settings-panel-desc" data-i18n="settings.appearanceSub">Choose how VYBE looks across the application.</p>
+            </div>
+            <div class="segmented-control" role="radiogroup" aria-label="Appearance">
+              <button type="button" class="segmented-option" data-set-theme="light" role="radio" aria-checked="false">
+                <span data-i18n="settings.themeLight">Light</span>
+              </button>
+              <button type="button" class="segmented-option" data-set-theme="dark" role="radio" aria-checked="false">
+                <span data-i18n="settings.themeDark">Dark</span>
+              </button>
+              <button type="button" class="segmented-option" data-set-theme="system" role="radio" aria-checked="false">
+                <span data-i18n="settings.themeSystem">System</span>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2. LANGUAGE -->
+        <section class="settings-panel" aria-labelledby="headingLanguage">
+          <div class="settings-panel-row">
+            <div class="settings-panel-copy">
+              <h2 class="settings-panel-title" id="headingLanguage" data-i18n="settings.language">Language</h2>
+              <p class="settings-panel-desc" data-i18n="settings.languageSub">Select the language used for navigation, buttons, and menus.</p>
+            </div>
+            <div class="segmented-control" role="radiogroup" aria-label="Language">
+              <button type="button" class="segmented-option" data-set-lang="en" role="radio" aria-checked="false">
+                <span>English</span>
+              </button>
+              <button type="button" class="segmented-option" data-set-lang="hi" role="radio" aria-checked="false">
+                <span>हिन्दी</span>
+              </button>
+              <button type="button" class="segmented-option" data-set-lang="fr" role="radio" aria-checked="false">
+                <span>Français</span>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3. ACCOUNT -->
+        <section class="settings-panel" aria-labelledby="headingAccount">
+          <div class="settings-panel-head">
+            <h2 class="settings-panel-title" id="headingAccount" data-i18n="settings.account">Account</h2>
+            <p class="settings-panel-desc" data-i18n="settings.accountSub">Update your public profile details and account information.</p>
+          </div>
+
+          <div class="settings-identity-bar">
+            <img id="settingsAvatar" src="" class="avatar avatar-lg" alt="Profile avatar">
+            <div class="settings-identity-meta">
+              <div class="settings-identity-name" id="settingsName">—</div>
+              <div class="settings-identity-sub">
+                <span id="settingsHandle">@—</span>
+                <span class="dot-sep">·</span>
+                <span id="settingsEmail">—</span>
+              </div>
+            </div>
+          </div>
+
+          <form id="settingsAccountForm" class="settings-form-grid" autocomplete="off">
+            <div class="settings-field-row">
+              <div class="form-group">
+                <label class="form-label" for="settingsDisplayName" data-i18n="settings.displayName">Display name</label>
+                <input type="text" class="input-field" id="settingsDisplayName" placeholder="Your display name" maxlength="50" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="settingsUsernameInput" data-i18n="settings.username">Username</label>
+                <input type="text" class="input-field input-readonly" id="settingsUsernameInput" readonly tabindex="-1">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="settingsBio" data-i18n="settings.bio">Bio</label>
+              <textarea class="input-field" id="settingsBio" rows="3" placeholder="Write a short bio..." maxlength="160" style="resize: vertical;"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="settingsWebsite" data-i18n="settings.website">Website</label>
+              <input type="url" class="input-field" id="settingsWebsite" placeholder="https://yourwebsite.com" maxlength="100">
+            </div>
+
+            <div class="settings-form-actions">
+              <span class="settings-meta-note">
+                <span data-i18n="settings.memberSince">Member since</span>: <strong id="settingsJoined">—</strong>
+              </span>
+              <button type="submit" class="btn btn-accent btn-sm" id="btnSaveProfile" data-i18n="settings.saveChanges">Save changes</button>
+            </div>
+          </form>
+        </section>
+
+        <!-- 4. SECURITY -->
+        <section class="settings-panel" aria-labelledby="headingSecurity">
+          <div class="settings-panel-row">
+            <div class="settings-panel-copy">
+              <h2 class="settings-panel-title" id="headingSecurity" data-i18n="settings.security">Security</h2>
+              <p class="settings-panel-desc" data-i18n="settings.sessionSub">Sign out of your account on this browser.</p>
+            </div>
+            <button type="button" class="btn btn-danger-outline btn-sm" id="btnSettingsLogout" data-i18n="settings.signOut">
+              Log out
+            </button>
+          </div>
+        </section>
+
+      </div>
+
+    </main>
+
+  </div>
+
+  <nav class="mobile-bottom-bar" id="appMobileBottomBar" aria-label="Mobile Navigation"></nav>
+
+  <script src="js/api.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/settings.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (!requireAuth()) return;
+      renderAppNavigation('settings');
+      initSettingsPage();
+    });
+  </script>
+</body>
+</html>

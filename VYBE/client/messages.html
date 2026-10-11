@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Messages / VYBE</title>
+  <meta name="description" content="Direct Messages on VYBE.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Mobile Top Header -->
+  <header class="mobile-top-header">
+    <a href="feed.html" class="vybe-brand">
+      <span class="brand-glyph">V</span>
+      <span>VYBE<span class="brand-tag">.</span></span>
+    </a>
+    <a href="feed.html" class="btn-ghost" aria-label="Back to Feed" style="padding: 6px;">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5"/><polyline points="12 19 5 12 12 5"/></svg>
+    </a>
+  </header>
+
+  <div class="app-shell">
+
+    <!-- 1. LEFT NAVIGATION -->
+    <aside class="app-sidebar-left">
+      <div class="sidebar-top">
+        <a href="feed.html" class="sidebar-brand-link vybe-brand">
+          <span class="brand-glyph">V</span>
+          <span>VYBE<span class="brand-tag">.</span></span>
+        </a>
+        <nav id="appSidebarNav" aria-label="Main Navigation"></nav>
+      </div>
+      <div id="appSidebarUser"></div>
+    </aside>
+
+    <!-- 2. MESSAGES TWO-PANEL INTERFACE -->
+    <main class="messages-container" style="flex: 1; max-width: 940px; border-right: 1px solid var(--border-hairline);">
+      
+      <!-- Thread List Column -->
+      <section class="messages-thread-list">
+        <div class="messages-thread-header" data-i18n="messages.title">Messages</div>
+        <div id="threadsListContainer" style="display: flex; flex-direction: column;"></div>
+      </section>
+
+      <!-- Active Chat Column -->
+      <section class="messages-chat-view">
+        
+        <!-- Chat Header -->
+        <div class="chat-view-header" id="activeChatHeader"></div>
+
+        <!-- Chat Conversation Messages -->
+        <div class="chat-conversation-scroll" id="activeChatConversation"></div>
+
+        <!-- Message Composer Form -->
+        <form class="chat-composer-row" id="chatMessageForm" autocomplete="off">
+          <input
+            type="text"
+            id="chatMessageInput"
+            class="chat-input-pill"
+            placeholder="Start a new message..."
+            data-i18n-placeholder="messages.placeholder"
+            maxlength="400"
+            required
+          >
+          <button type="submit" class="chat-send-btn" aria-label="Send Message">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </button>
+        </form>
+
+      </section>
+
+    </main>
+
+  </div>
+
+  <nav class="mobile-bottom-bar" id="appMobileBottomBar" aria-label="Mobile Navigation"></nav>
+
+  <script src="js/api.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/messages.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (!requireAuth()) return;
+      renderAppNavigation('messages');
+      initMessagesPage();
+    });
+  </script>
+</body>
+</html>

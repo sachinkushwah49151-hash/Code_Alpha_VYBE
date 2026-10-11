@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile / VYBE</title>
+  <meta name="description" content="Creator Profile on VYBE.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Mobile Top Header -->
+  <header class="mobile-top-header">
+    <a href="feed.html" class="vybe-brand">
+      <span class="brand-glyph">V</span>
+      <span>VYBE<span class="brand-tag">.</span></span>
+    </a>
+    <a href="messages.html" class="btn-ghost" aria-label="Direct Messages" style="padding: 6px;">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    </a>
+  </header>
+
+  <div class="app-shell">
+
+    <!-- 1. LEFT NAVIGATION -->
+    <aside class="app-sidebar-left">
+      <div class="sidebar-top">
+        <a href="feed.html" class="sidebar-brand-link vybe-brand">
+          <span class="brand-glyph">V</span>
+          <span>VYBE<span class="brand-tag">.</span></span>
+        </a>
+        <nav id="appSidebarNav" aria-label="Main Navigation"></nav>
+      </div>
+      <div id="appSidebarUser"></div>
+    </aside>
+
+    <!-- 2. CENTER PROFILE STREAM -->
+    <main class="app-center-feed">
+      
+      <!-- Profile Header Showcase Card -->
+      <section class="profile-header-card">
+        <div class="profile-top-row">
+          <div class="profile-identity">
+            <h1 class="profile-display-name" id="profDisplayName">Loading profile…</h1>
+            <span class="profile-handle-pill" id="profHandle">@—</span>
+          </div>
+          <img id="profAvatarImg" src="" class="avatar avatar-xl" alt="Profile Avatar">
+        </div>
+
+        <p class="profile-bio-text" id="profBio"></p>
+
+        <div class="profile-link-row">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          <a href="#" target="_blank" id="profWebsite">—</a>
+        </div>
+
+        <!-- Inline Stats: Posts | Followers | Following -->
+        <div class="profile-stats-bar">
+          <div class="profile-stat-unit">
+            <strong id="profStatPosts">0</strong>
+            <span data-i18n="profile.posts">Posts</span>
+          </div>
+          <div class="profile-stat-unit">
+            <strong id="profStatFollowers">0</strong>
+            <span data-i18n="profile.followers">Followers</span>
+          </div>
+          <div class="profile-stat-unit">
+            <strong id="profStatFollowing">0</strong>
+            <span data-i18n="profile.following">Following</span>
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="profile-cta-row">
+          <button type="button" class="btn btn-secondary btn-sm" id="btnOpenEditProfileModal" data-i18n="profile.editProfile">
+            Edit profile
+          </button>
+          <button type="button" class="btn btn-ghost btn-sm" id="btnShareProfileLink" data-i18n="profile.shareProfile">
+            Share profile
+          </button>
+        </div>
+      </section>
+
+      <!-- Profile Feed Tabs: Posts | Replies | Media -->
+      <div class="feed-top-bar" role="tablist">
+        <button type="button" class="feed-tab-btn active" data-tab="posts" role="tab" aria-selected="true" data-i18n="profile.posts">
+          Posts
+        </button>
+        <button type="button" class="feed-tab-btn" data-tab="replies" role="tab" aria-selected="false" data-i18n="profile.replies">
+          Replies
+        </button>
+        <button type="button" class="feed-tab-btn" data-tab="media" role="tab" aria-selected="false" data-i18n="profile.media">
+          Media
+        </button>
+      </div>
+
+      <!-- User Post Feed -->
+      <section class="post-stream" id="profilePostsContainer" role="feed" aria-label="Profile Posts"></section>
+
+    </main>
+
+    <!-- 3. RIGHT DISCOVERY SIDEBAR -->
+    <aside class="app-sidebar-right" id="appSidebarRight"></aside>
+
+  </div>
+
+  <!-- Mobile Bottom Nav -->
+  <nav class="mobile-bottom-bar" id="appMobileBottomBar" aria-label="Mobile Navigation"></nav>
+
+  <!-- Edit Profile Modal -->
+  <div class="modal-backdrop" id="editProfileModal" role="dialog" aria-modal="true">
+    <div class="modal-dialog-card" style="max-width: 480px;">
+      <div class="modal-header-row">
+        <span data-i18n="profile.editProfile">Edit profile</span>
+        <button class="modal-close-btn" id="closeEditProfileBtn">✕</button>
+      </div>
+      <form id="editProfileForm" style="padding: 20px; display: flex; flex-direction: column; gap: 16px;">
+        <div class="form-group">
+          <label class="form-label" for="editProfNameInput" data-i18n="profile.displayName">Display Name</label>
+          <input type="text" id="editProfNameInput" class="input-field" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="editProfBioInput" data-i18n="profile.bio">Bio</label>
+          <textarea id="editProfBioInput" class="input-field" rows="3" style="resize:none; line-height: 1.5;"></textarea>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="editProfWebsiteInput" data-i18n="profile.website">Website</label>
+          <input type="text" id="editProfWebsiteInput" class="input-field">
+        </div>
+        <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 10px;">
+          <button type="button" class="btn btn-ghost btn-sm" id="cancelEditProfileBtn" data-i18n="profile.cancel">Cancel</button>
+          <button type="submit" class="btn btn-primary btn-sm" data-i18n="profile.save">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/feed.js"></script>
+  <script src="js/profile.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (!requireAuth()) return;
+      renderAppNavigation('profile');
+      renderDiscoverySidebar();
+      initProfilePage();
+    });
+  </script>
+</body>
+</html>

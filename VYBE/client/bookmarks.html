@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bookmarks / VYBE</title>
+  <meta name="description" content="Your saved posts on VYBE.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Mobile Top Header -->
+  <header class="mobile-top-header">
+    <a href="feed.html" class="vybe-brand">
+      <span class="brand-glyph">V</span>
+      <span>VYBE<span class="brand-tag">.</span></span>
+    </a>
+  </header>
+
+  <div class="app-shell">
+
+    <!-- 1. LEFT NAVIGATION -->
+    <aside class="app-sidebar-left">
+      <div class="sidebar-top">
+        <a href="feed.html" class="sidebar-brand-link vybe-brand">
+          <span class="brand-glyph">V</span>
+          <span>VYBE<span class="brand-tag">.</span></span>
+        </a>
+        <nav id="appSidebarNav" aria-label="Main Navigation"></nav>
+      </div>
+      <div id="appSidebarUser"></div>
+    </aside>
+
+    <!-- 2. CENTER BOOKMARKS STREAM -->
+    <main class="app-center-feed">
+
+      <!-- Top Bar -->
+      <div class="sticky-page-header" style="display: flex; justify-content: space-between; align-items: center;">
+        <h1 style="font-size: 1.25rem; font-weight: 800; letter-spacing: -0.02em;" data-i18n="bookmarks.title">Bookmarks</h1>
+        <button type="button" class="btn-ghost btn-sm" id="btnClearBookmarks" style="color: var(--danger, #e53e3e); font-weight: 600; display: none;" data-i18n="bookmarks.clearAll">
+          Clear all
+        </button>
+      </div>
+
+      <!-- Bookmarks List -->
+      <section id="bookmarksContainer" role="feed" aria-label="Saved Posts"></section>
+
+    </main>
+
+    <!-- 3. RIGHT DISCOVERY SIDEBAR -->
+    <aside class="app-sidebar-right" id="appSidebarRight"></aside>
+
+  </div>
+
+  <nav class="mobile-bottom-bar" id="appMobileBottomBar" aria-label="Mobile Navigation"></nav>
+
+  <script src="js/api.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/feed.js"></script>
+  <script src="js/bookmarks.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (!requireAuth()) return;
+      renderAppNavigation('bookmarks');
+      renderDiscoverySidebar();
+      initBookmarksPage();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign in — VYBE</title>
+  <meta name="description" content="Welcome to VYBE. Connect. Share. Build together.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <div class="auth-glass-viewport">
+
+    <!-- Understated Creative-Community Network Background -->
+    <div class="auth-network-canvas" aria-hidden="true">
+      <svg class="auth-network-svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="vybeArc1" x1="0%" y1="20%" x2="100%" y2="80%">
+            <stop offset="0%" stop-color="#4f46e5" stop-opacity="0.0" />
+            <stop offset="35%" stop-color="#7c6df2" stop-opacity="0.32" />
+            <stop offset="70%" stop-color="#38bdf8" stop-opacity="0.22" />
+            <stop offset="100%" stop-color="#6366f1" stop-opacity="0.0" />
+          </linearGradient>
+          <linearGradient id="vybeArc2" x1="100%" y1="10%" x2="0%" y2="90%">
+            <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.0" />
+            <stop offset="45%" stop-color="#6366f1" stop-opacity="0.26" />
+            <stop offset="85%" stop-color="#60a5fa" stop-opacity="0.18" />
+            <stop offset="100%" stop-color="#4f46e5" stop-opacity="0.0" />
+          </linearGradient>
+          <radialGradient id="nodeGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#a5b4fc" stop-opacity="0.9" />
+            <stop offset="45%" stop-color="#6366f1" stop-opacity="0.35" />
+            <stop offset="100%" stop-color="#6366f1" stop-opacity="0" />
+          </radialGradient>
+        </defs>
+
+        <!-- Sweeping Network Arcs -->
+        <path d="M-80 620 C 280 340, 740 160, 1520 260" stroke="url(#vybeArc1)" stroke-width="1.4" />
+        <path d="M160 -40 C 520 240, 960 360, 1500 110" stroke="url(#vybeArc2)" stroke-width="1.2" />
+        <path d="M-40 260 C 380 460, 920 520, 1480 320" stroke="url(#vybeArc1)" stroke-width="1" stroke-dasharray="3 6" />
+        <path d="M240 940 C 580 620, 980 440, 1520 520" stroke="url(#vybeArc2)" stroke-width="1.1" />
+
+        <!-- Subtle Connecting Node Lines -->
+        <line x1="275" y1="245" x2="420" y2="175" stroke="rgba(124, 109, 242, 0.16)" stroke-width="1" />
+        <line x1="1040" y1="215" x2="1185" y2="295" stroke="rgba(96, 165, 250, 0.16)" stroke-width="1" />
+        <line x1="220" y1="535" x2="355" y2="610" stroke="rgba(124, 109, 242, 0.14)" stroke-width="1" />
+        <line x1="1080" y1="560" x2="1230" y2="485" stroke="rgba(124, 109, 242, 0.14)" stroke-width="1" />
+
+        <!-- Glowing Network Nodes -->
+        <circle cx="275" cy="245" r="10" fill="url(#nodeGlow)" />
+        <circle cx="275" cy="245" r="2.5" fill="#e0e7ff" />
+
+        <circle cx="420" cy="175" r="8" fill="url(#nodeGlow)" />
+        <circle cx="420" cy="175" r="2" fill="#c7d2fe" />
+
+        <circle cx="1040" cy="215" r="11" fill="url(#nodeGlow)" />
+        <circle cx="1040" cy="215" r="2.5" fill="#e0e7ff" />
+
+        <circle cx="1185" cy="295" r="9" fill="url(#nodeGlow)" />
+        <circle cx="1185" cy="295" r="2" fill="#bae6fd" />
+
+        <circle cx="355" cy="610" r="9" fill="url(#nodeGlow)" />
+        <circle cx="355" cy="610" r="2" fill="#c7d2fe" />
+
+        <circle cx="1080" cy="560" r="10" fill="url(#nodeGlow)" />
+        <circle cx="1080" cy="560" r="2.2" fill="#e0e7ff" />
+      </svg>
+    </div>
+
+    <!-- Ambient Left & Right Community Accents (Desktop Only) -->
+    <div class="auth-ambient-quote" aria-hidden="true">
+      <span>Build</span>
+      <span>Create</span>
+      <span>Share</span>
+      <span>Connect</span>
+      <span>Grow</span>
+      <span style="color: rgba(139, 122, 255, 0.45);">Together.</span>
+    </div>
+
+    <div class="auth-ambient-pillars" aria-hidden="true">
+      <span>Makers</span>
+      <span>Designers</span>
+      <span>Developers</span>
+      <span>Creators</span>
+      <span>Thinkers</span>
+      <span>Communities</span>
+    </div>
+
+    <!-- Centered Login Card Stage -->
+    <main class="auth-center-stage">
+      <section class="auth-glass-card" aria-labelledby="authHeading">
+
+        <!-- 1. Brand & Title Hierarchy -->
+        <div class="auth-card-head">
+          <a href="index.html" class="auth-brand-lockup" aria-label="VYBE Home">
+            <span class="auth-brand-badge">V</span>
+            <span class="auth-brand-wordmark">VYBE<span class="dot">.</span></span>
+          </a>
+          <h1 class="auth-card-title" id="authHeading">Welcome to VYBE</h1>
+          <p class="auth-card-tagline">Connect. Share. Build together.</p>
+        </div>
+
+        <!-- Inline Alert Banner -->
+        <div id="loginFormAlert" class="auth-alert" role="alert" aria-live="polite"></div>
+
+        <!-- 2. Sign-In Form -->
+        <form id="loginForm" class="auth-glass-form" novalidate autocomplete="on">
+          <div class="glass-field-group">
+            <label class="sr-only" for="loginEmail">Email or username</label>
+            <div class="glass-input-wrap">
+              <span class="glass-input-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="4" width="20" height="16" rx="3" />
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                </svg>
+              </span>
+              <input
+                type="text"
+                id="loginEmail"
+                name="identifier"
+                class="glass-input"
+                placeholder="Email or username"
+                autocomplete="username"
+                required
+              >
+            </div>
+            <span id="loginEmailError" class="field-error-msg" role="alert"></span>
+          </div>
+
+          <div class="glass-field-group">
+            <label class="sr-only" for="loginPassword">Password</label>
+            <div class="glass-input-wrap">
+              <span class="glass-input-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                </svg>
+              </span>
+              <input
+                type="password"
+                id="loginPassword"
+                name="password"
+                class="glass-input"
+                placeholder="Password"
+                autocomplete="current-password"
+                required
+                style="padding-right: 42px;"
+              >
+              <button
+                type="button"
+                class="glass-toggle-btn"
+                id="togglePasswordBtn"
+                aria-label="Show password"
+                aria-pressed="false"
+              >
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              </button>
+            </div>
+            <span id="loginPasswordError" class="field-error-msg" role="alert"></span>
+          </div>
+
+          <!-- Remember Me Option -->
+          <div class="auth-options-row">
+            <label class="auth-remember-label" for="rememberMeCheckbox">
+              <input
+                type="checkbox"
+                id="rememberMeCheckbox"
+                class="auth-remember-checkbox"
+                checked
+              >
+              <span>Remember me</span>
+            </label>
+          </div>
+
+          <!-- Primary Sign In Button -->
+          <button type="submit" class="btn-glass-primary" id="loginSubmitBtn">
+            <span id="loginSubmitText">Sign in</span>
+            <span aria-hidden="true">→</span>
+          </button>
+        </form>
+
+        <!-- 3. Divider -->
+        <div class="auth-glass-divider">
+          <span>OR CONTINUE WITH</span>
+        </div>
+
+        <!-- 4. Social OAuth & Demo Access -->
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <div class="auth-oauth-grid">
+            <button type="button" class="btn-glass-secondary" id="btnGoogleAuth" data-provider="Google">
+              <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+                <path fill="#EA4335" d="M12 10.2v3.9h5.5c-.24 1.26-.96 2.33-2.04 3.05l3.3 2.56c1.92-1.77 3.04-4.38 3.04-7.51 0-.72-.06-1.42-.19-2H12z"/>
+                <path fill="#34A853" d="M12 22c2.7 0 4.96-.9 6.62-2.43l-3.3-2.56c-.9.6-2.06.96-3.32.96-2.55 0-4.71-1.72-5.48-4.04H3.11v2.64C4.76 19.86 8.12 22 12 22z"/>
+                <path fill="#4A90E2" d="M6.52 13.93A5.96 5.96 0 0 1 6.2 12c0-.67.12-1.32.32-1.93V7.43H3.11A9.98 9.98 0 0 0 2 12c0 1.61.39 3.14 1.11 4.57l3.41-2.64z"/>
+                <path fill="#FBBC05" d="M12 6.03c1.47 0 2.79.5 3.83 1.5l2.87-2.87C16.95 3.04 14.7 2 12 2 8.12 2 4.76 4.14 3.11 7.43l3.41 2.64c.77-2.32 2.93-4.04 5.48-4.04z"/>
+              </svg>
+              <span>Google</span>
+            </button>
+
+            <button type="button" class="btn-glass-secondary" id="btnFacebookAuth" data-provider="Facebook">
+              <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+                <circle cx="12" cy="12" r="10" fill="#1877F2"/>
+                <path fill="#ffffff" d="M13.4 17.5v-5h1.68l.25-1.95H13.4V9.3c0-.56.16-.95.97-.95h1.03V6.6c-.18-.02-.8-.08-1.51-.08-1.5 0-2.52.91-2.52 2.59v1.44H9.7v1.95h1.67v5h2.03z"/>
+              </svg>
+              <span>Facebook</span>
+            </button>
+          </div>
+
+          <button type="button" class="btn-glass-secondary" id="quickDemoLoginBtn">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+              <circle cx="12" cy="7" r="4" />
+            </svg>
+            <span>Try demo account</span>
+          </button>
+        </div>
+
+        <!-- 5. Footer Navigation -->
+        <div class="auth-glass-footer">
+          New to VYBE? <a href="register.html">Create account</a>
+        </div>
+
+      </section>
+
+      <!-- Preview Caption Below Card -->
+      <div class="auth-demo-caption">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="10" />
+          <line x1="12" y1="16" x2="12" y2="12" />
+          <line x1="12" y1="8" x2="12.01" y2="8" />
+        </svg>
+        <span>Demo access is for preview only.</span>
+      </div>
+    </main>
+
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/auth.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (redirectIfLoggedIn()) return;
+      initLoginPage();
+    });
+  </script>
+</body>
+</html>

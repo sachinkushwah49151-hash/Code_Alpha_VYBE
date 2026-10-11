@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Post / VYBE</title>
+  <meta name="description" content="Create a new post on VYBE.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Mobile Top Header -->
+  <header class="mobile-top-header">
+    <a href="feed.html" class="vybe-brand">
+      <span class="brand-glyph">V</span>
+      <span>VYBE<span class="brand-tag">.</span></span>
+    </a>
+    <a href="feed.html" class="btn-ghost" aria-label="Cancel" style="padding: 6px;">
+      ✕
+    </a>
+  </header>
+
+  <div class="app-shell">
+
+    <!-- 1. LEFT NAVIGATION -->
+    <aside class="app-sidebar-left">
+      <div class="sidebar-top">
+        <a href="feed.html" class="sidebar-brand-link vybe-brand">
+          <span class="brand-glyph">V</span>
+          <span>VYBE<span class="brand-tag">.</span></span>
+        </a>
+        <nav id="appSidebarNav" aria-label="Main Navigation"></nav>
+      </div>
+      <div id="appSidebarUser"></div>
+    </aside>
+
+    <!-- 2. CENTER COMPOSER VIEW -->
+    <main class="app-center-feed">
+      <div style="padding: 16px 20px; border-bottom: 1px solid var(--border-hairline); display: flex; align-items: center; justify-content: space-between;">
+        <h1 style="font-size: 1.25rem; font-weight: 800; letter-spacing: -0.02em;">Create Post</h1>
+        <a href="feed.html" class="btn btn-ghost btn-sm">Cancel</a>
+      </div>
+
+      <div style="padding: 24px 20px;">
+        <form id="standaloneCreateForm">
+          <div style="display: flex; gap: 14px; margin-bottom: 20px;">
+            <img id="standaloneAvatar" src="" class="avatar avatar-md" alt="">
+            <div style="flex: 1;">
+              <div id="standaloneAuthorName" style="font-weight: 700; font-size: 0.95rem; margin-bottom: 4px;"></div>
+              <textarea
+                id="standaloneTextarea"
+                class="composer-textarea"
+                placeholder="What's happening? Share thoughts, updates, or code..."
+                rows="6"
+                maxlength="280"
+                style="min-height: 140px; font-size: 1.05rem;"
+                required
+              ></textarea>
+            </div>
+          </div>
+
+          <!-- Attach Image Option -->
+          <div class="form-group" style="margin-bottom: 20px;">
+            <label class="form-label" for="standaloneImgInput">Attach Image URL (Optional)</label>
+            <input type="url" id="standaloneImgInput" class="input-field" placeholder="https://images.unsplash.com/photo-...">
+            <div id="standalonePreviewZone" style="display: none; margin-top: 10px; border-radius: 10px; overflow: hidden; border: 1px solid var(--border-hairline); max-height: 240px;">
+              <img id="standalonePreviewImg" src="" alt="Preview" style="width: 100%; max-height: 240px; object-fit: cover;">
+            </div>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-hairline); padding-top: 16px;">
+            <span id="standaloneCharCounter" style="font-size: 0.85rem; color: var(--text-muted);">280</span>
+            <div style="display: flex; gap: 10px;">
+              <a href="feed.html" class="btn btn-secondary btn-sm">Cancel</a>
+              <button type="submit" class="btn btn-accent btn-sm">Publish post</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <!-- 3. RIGHT DISCOVERY SIDEBAR -->
+    <aside class="app-sidebar-right" id="appSidebarRight"></aside>
+
+  </div>
+
+  <nav class="mobile-bottom-bar" id="appMobileBottomBar" aria-label="Mobile Navigation"></nav>
+
+  <script src="js/api.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (!requireAuth()) return;
+      renderAppNavigation('home');
+      renderDiscoverySidebar();
+
+      const user = getCurrentUser();
+      document.getElementById('standaloneAvatar').src = user.avatar;
+      document.getElementById('standaloneAuthorName').textContent = user.name;
+
+      const textarea = document.getElementById('standaloneTextarea');
+      const counter = document.getElementById('standaloneCharCounter');
+      const form = document.getElementById('standaloneCreateForm');
+      const imgInput = document.getElementById('standaloneImgInput');
+      const previewZone = document.getElementById('standalonePreviewZone');
+      const previewImg = document.getElementById('standalonePreviewImg');
+
+      imgInput.addEventListener('input', () => {
+        const val = imgInput.value.trim();
+        if (val) {
+          previewImg.src = val;
+          previewZone.style.display = 'block';
+        } else {
+          previewZone.style.display = 'none';
+        }
+      });
+
+      textarea.addEventListener('input', () => {
+        const remaining = 280 - textarea.value.length;
+        counter.textContent = remaining;
+        counter.style.color = remaining < 20 ? 'var(--like-pink)' : 'var(--text-muted)';
+      });
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const content = textarea.value.trim();
+        if (!content) return;
+
+        const img = imgInput.value.trim();
+        const submitBtn = form.querySelector('button[type="submit"]');
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Publishing...';
+        }
+
+        try {
+          await api.posts.create({
+            content,
+            mediaUrl: img,
+          });
+
+          const me = getCurrentUser();
+          if (me.stats) {
+            me.stats.posts = (me.stats.posts || 0) + 1;
+            saveCurrentUser(me);
+          }
+
+          showToast('Post published to VYBE! 🚀', 'success');
+          setTimeout(() => {
+            window.location.href = 'feed.html';
+          }, 350);
+        } catch (err) {
+          showToast(err.message || 'Failed to publish post', 'error');
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Publish';
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>
